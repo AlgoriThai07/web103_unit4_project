@@ -4,7 +4,7 @@ Submitted by: **Thai**
 
 About this web app: **Bolt Bucket is a DIY custom car builder application. It enables users to customize a sleek sports car across four distinct categories: paint color, roof style, wheel selection, and interior design. The app recalculates prices dynamically, renders the vehicle profile using a custom-tailored SVG vector, highlights and blocks incompatible option selections (e.g., locking out incompatible combinations in real time), and provides full CRUD capabilities (create, read, update, delete) synchronized with a Render PostgreSQL database.**
 
-Time spent: **12** hours spent in total
+Time spent: **5** hours spent in total
 
 ## Required Features
 
