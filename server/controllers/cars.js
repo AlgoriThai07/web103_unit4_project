@@ -6,16 +6,16 @@ const getCars = async (req, res) => {
             SELECT
                 custom_cars.*,
                 ext.name as exterior_name,
-                ext.visual_values as exterior_color,
+                ext.visual_value as exterior_color,
                 ext.price as exterior_price,
                 roof.name as roof_name,
-                roof.visual_values as roof_color,
+                roof.visual_value as roof_color,
                 roof.price as roof_price,
                 wh.name as wheels_name,
-                wh.visual_values as wheels_color,
+                wh.visual_value as wheels_color,
                 wh.price as wheels_price,
                 int.name as interior_name,
-                int.visual_values as interior_color,
+                int.visual_value as interior_color,
                 int.price as interior_price
             FROM custom_cars
             JOIN car_options ext
@@ -26,7 +26,7 @@ const getCars = async (req, res) => {
             ON custom_cars.wheels_id = wh.id
             JOIN car_options int
             ON custom_cars.interior_id = int.id
-            ORDER BY custom_cars.created_at DESC;
+            ORDER BY custom_cars.id DESC;
         `
         const results = await pool.query(selectQuery);
         res.status(200).json({ success: true, data: results.rows });
@@ -43,16 +43,16 @@ const getCarById = async (req, res) => {
             SELECT
                 custom_cars.*,
                 ext.name as exterior_name,
-                ext.visual_values as exterior_color,
+                ext.visual_value as exterior_color,
                 ext.price as exterior_price,
                 roof.name as roof_name,
-                roof.visual_values as roof_color,
+                roof.visual_value as roof_color,
                 roof.price as roof_price,
                 wh.name as wheels_name,
-                wh.visual_values as wheels_color,
+                wh.visual_value as wheels_color,
                 wh.price as wheels_price,
                 int.name as interior_name,
-                int.visual_values as interior_color,
+                int.visual_value as interior_color,
                 int.price as interior_price
             FROM custom_cars
             JOIN car_options ext
